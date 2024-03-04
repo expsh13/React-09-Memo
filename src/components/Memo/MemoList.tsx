@@ -1,10 +1,13 @@
 import { HiOutlineDocumentAdd } from "react-icons/hi";
 
 type PropsType = {
-  list: [];
+  list: string[];
+  onListChange: (list: string[]) => void;
 };
 
 export const MemoList = (props: PropsType) => {
+  const { list, onListChange } = props;
+
   return (
     <div className="bg-gray-300 p-2">
       <button className="flex items-center">
