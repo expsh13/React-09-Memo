@@ -1,4 +1,5 @@
 import { HiOutlineDocumentAdd } from "react-icons/hi";
+import { MemoListItem } from "./MemoListItem";
 
 type ListType = {
   id: number;
@@ -22,10 +23,8 @@ export const MemoList = (props: PropsType) => {
         <HiOutlineDocumentAdd size={20} />
       </button>
       <ul className="mt-2 grid gap-1">
-        {list.map((item, i) => (
-          <li className="rounded shadow p-1 box-border bg-gray-500" key={i}>
-            <input type="text" />
-          </li>
+        {list.map((item) => (
+          <MemoListItem key={item.id} />
         ))}
         <li className="rounded shadow p-1 box-border bg-gray-500 text-white">
           メモ名
