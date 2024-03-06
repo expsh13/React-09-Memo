@@ -1,8 +1,12 @@
 import { HiOutlineDocumentAdd } from "react-icons/hi";
 
+type ListType = {
+  id: number;
+};
+
 type PropsType = {
-  list: string[];
-  onListChange: (list: string[]) => void;
+  list: ListType[];
+  onListChange: (list: ListType[]) => void;
 };
 
 export const MemoList = (props: PropsType) => {

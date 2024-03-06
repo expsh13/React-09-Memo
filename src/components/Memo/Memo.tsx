@@ -2,15 +2,19 @@ import { useState } from "react";
 import { Editor } from "./Editor";
 import { MemoList } from "./MemoList";
 
+type ListType = {
+  id: number;
+};
+
 export const Memo = () => {
-  const [memoList, setMemoList] = useState<string[]>([]);
+  const [memoList, setMemoList] = useState<ListType[]>([]);
 
   return (
     <div className="flex w-full">
       <div className="w-1/4">
         <MemoList
           list={memoList}
-          onListChange={(list: string[]) => setMemoList(list)}
+          onListChange={(list: ListType[]) => setMemoList(list)}
         />
       </div>
       <div className="flex-1">
