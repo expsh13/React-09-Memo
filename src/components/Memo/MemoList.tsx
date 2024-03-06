@@ -14,11 +14,19 @@ export const MemoList = (props: PropsType) => {
 
   return (
     <div className="bg-gray-300 p-2">
-      <button className="flex items-center">
+      <button
+        className="flex items-center"
+        onClick={() => onListChange([...list, { id: list.length + 1 }])}
+      >
         <p>新規メモを追加</p>
         <HiOutlineDocumentAdd size={20} />
       </button>
       <ul className="mt-2 grid gap-1">
+        {list.map((item, i) => (
+          <li className="rounded shadow p-1 box-border bg-gray-500" key={i}>
+            <input type="text" />
+          </li>
+        ))}
         <li className="rounded shadow p-1 box-border bg-gray-500 text-white">
           メモ名
         </li>
