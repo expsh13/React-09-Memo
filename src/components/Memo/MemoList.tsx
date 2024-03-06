@@ -3,6 +3,7 @@ import { useState } from "react";
 
 type ListType = {
   id: number;
+  active: boolean;
 };
 
 type PropsType = {
@@ -17,7 +18,9 @@ export const MemoList = (props: PropsType) => {
     <div className="bg-gray-300 p-2">
       <button
         className="flex items-center"
-        onClick={() => onListChange([...list, { id: list.length + 1 }])}
+        onClick={() =>
+          onListChange([...list, { id: list.length + 1, active: false }])
+        }
       >
         <p>新規メモを追加</p>
         <HiOutlineDocumentAdd size={20} />
@@ -42,11 +45,7 @@ const MemoListItem = () => {
 
   return (
     <li className="rounded shadow p-1 box-border bg-gray-500">
-      <input
-        onChange={(e) => setText(e.target.value)}
-        type="text"
-        value={text}
-      />
+      <input onBlur={} type="text" value={text} />
     </li>
   );
 };

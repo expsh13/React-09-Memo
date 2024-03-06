@@ -4,6 +4,7 @@ import { MemoList } from "./MemoList";
 
 type ListType = {
   id: number;
+  active: boolean;
 };
 
 export const Memo = () => {
