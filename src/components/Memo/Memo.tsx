@@ -8,14 +8,14 @@ type ListType = {
 };
 
 export const Memo = () => {
-  const [memoList, setMemoList] = useState<ListType[]>([]);
+  const [activeMemo, setActiveMemo] = useState<ListType | undefined>(undefined);
 
   return (
     <div className="flex w-full">
       <div className="w-1/4">
         <MemoList
-          list={memoList}
-          onListChange={(list: ListType[]) => setMemoList(list)}
+          list={activeMemo}
+          onListChange={(list: ListType[]) => setActiveMemo(list)}
         />
       </div>
       <div className="flex-1">
